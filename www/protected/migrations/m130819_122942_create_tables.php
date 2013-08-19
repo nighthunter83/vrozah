@@ -5,7 +5,7 @@ class m130819_122942_create_tables extends CDbMigration
 	public function up()
 	{
         $this->createTable('{{product}}', array(
-            'id' => 'integer',
+            'id' => 'pk',
             'product_type' => 'integer',
             'name' => 'string',
             'desc' => 'string',
@@ -14,6 +14,7 @@ class m130819_122942_create_tables extends CDbMigration
         ));
 
         $this->createTable('{{user_info}}', array(
+            'id' => 'pk',
             'first_name' => 'string',
             'last_name' => 'string',
             'phone' => 'string',
@@ -21,6 +22,7 @@ class m130819_122942_create_tables extends CDbMigration
         ));
 
         $this->createTable('{{delivery_info}}', array(
+            'id' => 'pk',
             'name' => 'string',
             'phone' => 'string',
             'address_type' => 'integer',
@@ -36,13 +38,13 @@ class m130819_122942_create_tables extends CDbMigration
         ));
 
         $this->createTable('{{order_item}}', array(
-            'id' => 'integer',
+            'id' => 'pk',
             'product' => 'integer',
             'count' => 'integer',
         ));
 
         $this->createTable('{{order}}', array(
-            'id' => 'integer',
+            'id' => 'pk',
             'date_add' => 'datetime',
             'status' => 'integer',
             'user_info' => 'integer',
